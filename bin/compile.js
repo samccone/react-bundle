@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 require('../')(process.argv[2])
-.done(console.log.bind(console), function(err) {
+.done(function(bundle) {
+  console.log(bundle.getSource({inlineSourceMap: false, minify: true}));
+}, function(err) {
   throw(err);
 });

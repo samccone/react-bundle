@@ -12,11 +12,10 @@ var options = {
 module.exports = function(base) {
   base = path.resolve(base);
   var root = path.dirname(base);
-  var url = '/' + path.basename(base);
+  var url = '/' + path.basename(base) + '.bundle?dev=false';
 
   options.assetRoots = [root];
   options.projectRoots = [root];
-
   return packager.buildPackageFromUrl(options, url);
 };
 
